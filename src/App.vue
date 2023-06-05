@@ -1,6 +1,5 @@
 <template>
-<el-button type="primary">Primary</el-button>
-<el-button type="success">Success</el-button>
+    <el-button type="primary">Primary</el-button>
 </template>
 
 <script setup>
@@ -9,4 +8,4 @@
 
 <style lang="less" scoped>
 
-</style>
+</style> 
