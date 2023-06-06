@@ -1,6 +1,7 @@
 <template>
-    <!-- 一级路由出口组件 -->
-    <RouterView></RouterView>
+  <div class="home">
+    <h2>我是分类页面</h2>
+  </div>
 </template>
 
 <script setup>
@@ -9,4 +10,4 @@
 
 <style lang="less" scoped>
 
-</style> 
+</style>
