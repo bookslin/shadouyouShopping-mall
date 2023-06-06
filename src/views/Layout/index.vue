@@ -1,12 +1,14 @@
 <template>
-  <div class="home">
-    <h2>我是首页</h2>
-    <RouterView></RouterView>
-  </div>
+  <LayoutNav></LayoutNav>
+  <RouterView></RouterView>
+  <LayoutHeader></LayoutHeader>
+  <LayoutFooter></LayoutFooter>
 </template>
 
 <script setup>
-
+import LayoutNav from './components/LayoutNav.vue'
+import LayoutHeader from './components/LayoutHeader.vue'
+import LayoutFooter from './components/LayoutFooter.vue'
 </script>
 
 <style lang="less" scoped>
