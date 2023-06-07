@@ -3,7 +3,6 @@
   <LayoutNav></LayoutNav>
   <LayoutHeader></LayoutHeader>
   <RouterView></RouterView>
-
   <LayoutFooter> </LayoutFooter>
 </template>
 
