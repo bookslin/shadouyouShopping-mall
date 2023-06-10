@@ -1,4 +1,5 @@
 <script setup>
+import imageView from "@/composables/imageView/index.vue"
 import DetailHot from "./components/DetailHot.vue"
 import { getDetailAPI } from "@/apis/detail"
 import { onMounted, ref } from "vue";
@@ -32,7 +33,7 @@ onMounted(() => getGoods())
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-
+              <imageView></imageView>
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
@@ -116,9 +117,9 @@ onMounted(() => getGoods())
             <!-- 24热榜+专题推荐 -->
             <div class="goods-aside">
               <!-- 24小时 -->
-              <DetailHot></DetailHot>
+              <DetailHot :hot-type="1"></DetailHot>
               <!-- 周日榜单 -->
-              <DetailHot></DetailHot>
+              <DetailHot :hot-type="2"></DetailHot>
             </div>
           </div>
         </div>
