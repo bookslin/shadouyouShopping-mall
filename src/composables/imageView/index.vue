@@ -29,12 +29,14 @@ const enterhandler = (i) => {
 const target = ref(null)
 const { elementX, elementY, isOutside } = useMouseInElement(target)
 
+
 // 3. 控制滑块跟随鼠标移动（监听elementX/Y变化，一旦变化 重新设置left/top）
 const left = ref(0)
 const top = ref(0)
 
 const positionX = ref(0)
 const positionY = ref(0)
+
 watch([elementX, elementY, isOutside], () => {
   // console.log('xy变化了')
   // 如果鼠标没有移入到盒子里面 直接不执行后面的逻辑
@@ -61,12 +63,13 @@ watch([elementX, elementY, isOutside], () => {
   positionX.value = -left.value * 2
   positionY.value = -top.value * 2
 
+
+
 })
 </script>
 
 
 <template>
-  {{ elementX }},{{ elementY }},{{ isOutside }}
   <div class="goods-image">
     <!-- 左侧大图-->
     <div class="middle" ref="target">
