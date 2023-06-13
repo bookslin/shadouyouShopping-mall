@@ -1,16 +1,20 @@
 <script setup>
 
 import { ref } from 'vue'
-import {loginAPI} from '@/apis/user'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
 import {useRouter} from 'vue-router'
+
+import {useUserStore} from '@/stores/user'
+
+const useStore =useUserStore()
  
 //表单校验(账户名,密码)
 //1.准备表单对象
 const form = ref({
-  account: '',
-  password: ''
+  account: '12056258282',
+  password: 'hm#qd@23!',
+  agree:true
 })
 //2.准备规则对象
 const rules = {
@@ -23,7 +27,7 @@ const rules = {
   ],
   agree: [
     {
-      validator:(rulr,value,callback) => {
+      validator:(rule,value,callback) => {
         console.log(value);
         //自定义校验逻辑
         //勾选就通过,不勾选不通过
@@ -47,8 +51,9 @@ const doLogin = () => {
     console.log(valid);
     //以valid作为判断条件,如果通过校验才执行登录逻辑
     if(valid) {
-     const res =  await loginAPI({account,password})
-     console.log(res);
+    //  const res =  await loginAPI({account,password})
+    //  console.log(res);
+    await useStore.getUserInfo( {account,password})
      //1.提示信息
       ElMessage({type:'success' ,message:'登录成功'})
      //2.跳转首页
@@ -112,7 +117,7 @@ const doLogin = () => {
           <a href="javascript:;">搜索推荐</a>
           <a href="javascript:;">友情链接</a>
         </p>
-        <p>CopyRight &copy; 小兔鲜儿</p>
+      
       </div>
     </footer>
   </div>
